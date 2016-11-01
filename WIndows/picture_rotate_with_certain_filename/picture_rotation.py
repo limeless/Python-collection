@@ -13,7 +13,6 @@ def jpg_rotate():
 		else:
 			logging.warning("{0} is already correct." .format(jpg))
 			#logging.warning("{0} , {1} \n" .format(im.size[0] , im.size[1]))
-
 	return
 	
 def back_rorate():

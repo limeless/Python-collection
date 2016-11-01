@@ -36,6 +36,5 @@ def main():
 	back_rorate()
 	logging.info('BACK rotation is done. this software will exit.')
 	
-	
 if __name__ == '__main__':
 	main()

@@ -9,9 +9,9 @@ def jpg_rotate():
 		if(im.size[0] > im.size[1]):
 			im.rotate(270,expand=True).save(jpg,quality=100)
 			logging.info("---- {0} ----" .format(jpg))
-			#logging.info("{0} , {1} \n" .format(im.size[0] , im.size[0]))
+			logging.info("{0} , {1} \n" .format(im.size[0] , im.size[0]))
 		else:
-			logging.warning("{0} is already rotated." .format(jpg))
+			logging.warning("{0} is already correct." .format(jpg))
 			#logging.warning("{0} , {1} \n" .format(im.size[0] , im.size[1]))
 
 	return
@@ -23,19 +23,19 @@ def back_rorate():
 		if(im.size[0] > im.size[1]):
 			im.rotate(270,expand=True).save(back,quality=100)
 			logging.info("---- {0} ----" .format(back))
-			#logging.info("{0} , {1} \n" .format(im.size[0] , im.size[0]))
+			logging.info("{0} , {1} \n" .format(im.size[0] , im.size[0]))
 		else:
-			logging.warning("{0} is already rotated." .format(back))
+			logging.warning("{0} is already correct." .format(back))
 			#logging.warning("{0} , {1} \n" .format(im.size[0] , im.size[1]))
 	return
 	
 def main():
-	logging.basicConfig(filename='1.log', level=logging.INFO, format='%(asctime)s 【%(levelname)s] \n %(message)s \n')
+	logging.basicConfig(filename='1.log', level=logging.INFO, format='%(asctime)s [ %(levelname)s ] \n    %(message)s \n')
 	logging.info('Start JPG rotation.')
 	jpg_rotate()
-	logging.info('JPG rotation is done.\n now start with BACK rotation.')
+	logging.info('JPG rotation is done.\n now will start BACK rotation.')
 	back_rorate()
-	logging.info('BACK rotation is done.')
+	logging.info('BACK rotation is done. this software will exit.')
 	
 	
 if __name__ == '__main__':

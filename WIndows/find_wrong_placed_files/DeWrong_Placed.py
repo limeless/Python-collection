@@ -25,6 +25,6 @@ def main():
 	logging.basicConfig(filename='wrong_placed.log', filemode='w', level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s ')
 	find_pics()
 	return
-	
+
 if __name__ == '__main__':
 	main()

@@ -22,19 +22,19 @@ def process_data(threadName, q):
         if not workQueue.empty():
             temp_list = q.get()
             queueLock.release()
-            url = temp_list[0]
-            title = temp_list[1]
+            url = temp_list[]
+            title = temp_list[1]w
             useragent = temp_list[2]
             if 'Re:' in title:
                 title = title.replace('Re: ', 'Re_')
-                print('文章標題處理: {}'.format(title))
+                #print('文章標題處理: {}'.format(title))
             elif 'Fw:' in title:
                 title = title.replace('Fw: ', 'Fw_')
-                print('文章標題處理: {}'.format(title))
+                #print('文章標題處理: {}'.format(title))
             res = requests.get(url, headers=useragent)
             soup = BeautifulSoup(res.text, 'lxml')
             if len(soup.findAll('a', {'href':re.compile('http:\/\/i\.imgur\.com\/.*')})) > 0:
-                print('{}: 正在尋找正妹……'.format(threadName))
+                #print('{}: 正在尋找正妹……'.format(threadName))
                 for index, img_url in enumerate(soup.findAll('a', {'href':re.compile('http:\/\/i\.imgur\.com\/.*')})):
                     try:
                         urlretrieve(img_url['href'], 'D:\Beauty\{}_{}.jpg'.format(title, index))
@@ -71,7 +71,7 @@ if __name__ == '__main__':
         print('目前頁面: {}'.format(pagenum))
         curres = 'https://www.ptt.cc/bbs/Beauty/index{}.html'.format(pagenum)
         useragent = {'User-Agent': ua.random}
-        print('偽裝為裝置: {}'.format(useragent))
+        #print('偽裝為裝置: {}'.format(useragent))
         res = requests.get(curres, headers=useragent)
         soup = BeautifulSoup(res.text, 'lxml')
         print('正在爬取頁面: {}'.format(curres))
@@ -82,13 +82,13 @@ if __name__ == '__main__':
             if 'search' in url:
                 pass
             elif '[帥哥]' in title:
-                print('發現非正妹, 跳過！ {}'.format(title))
+                #print('發現非正妹, 跳過！ {}'.format(title))
                 pass
             elif '鲜肉' in title:
-                print('發現非正妹, 跳過！ {}'.format(title))
+                #print('發現非正妹, 跳過！ {}'.format(title))
                 pass
             elif '男' in title:
-                print('發現非正妹, 跳過！ {}'.format(title))
+                #print('發現非正妹, 跳過！ {}'.format(title))
                 pass
             else:
                 temp_list.append(url)

@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 from urllib.request import urlretrieve
 from fake_useragent import UserAgent
-import time, os, queue, threading, chardet, re, requests, logging, configparser
+import time, os, queue, threading, re, requests, logging, configparser
 
 INTRO = '''
 COPYRIGHT 2018              PTT Beauty 爬圖工具
@@ -125,7 +125,6 @@ if __name__ == '__main__':
     if not os.path.exists(loc):
         os.makedirs(loc)
 
-    logging.info('讀取 User-Agent 資料...')    
     ua = UserAgent()
     useragent = {'User-Agent': ua.random}
 
